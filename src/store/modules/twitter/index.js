@@ -2,7 +2,7 @@ import actions from './actions';
 import mutations from './mutations';
 import getters from './getters';
 
-const initialState = {
+const state = () => ({
   profile: {
     id: '',
     createdAt: '1970-01-01',
@@ -11,38 +11,8 @@ const initialState = {
   tweets: {
     tweets: [],
     nextToken: undefined,
-  },
-  followers: {
-    followers: [],
-    nextToken: undefined,
-  },
-  following: {
-    following: [],
-    nextToken: undefined,
-  },
-  search: {
-    results: [],
-    nextToken: undefined,
-  },
-  notifications: {
-    all: [],
-    mentions: [],
-    newNotifications: 0,
-    subscription: undefined,
-    messages: {
-      conversations: [],
-      nextToken: undefined,
-      newMessages: 0,
-      conversationsSet: new Set(),
-      active: {
-        conversation: undefined,
-        messages: [],
-        nextTokenMessages: undefined,
-      },
-    },
-  },
-};
-const state = () => ({...initialState});
+  }
+});
 
 export default {
   namespaced: true,
